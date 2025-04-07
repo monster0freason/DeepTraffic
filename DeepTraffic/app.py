@@ -13,10 +13,10 @@ LANE_API_URL = "http://127.0.0.1:5000/traffic"
 
 # Define lanes and their video paths
 LANES = {
-    "lane1": "vid2.mp4",
-    "lane2": "vid6.mp4",
-    "lane3": "vid5.mp4",
-    "lane4": "vid4.mp4"
+    "lane1": "vid5.mp4",
+    "lane2": "vid1.mp4",
+    "lane3": "vid4.mp4",
+    "lane4": "vid2.mp4"
 }
 LANES_CYCLE = ["lane1", "lane2", "lane3", "lane4"]
 
@@ -35,13 +35,7 @@ REFRESH_EVERY_N_CYCLES = 3  # Refresh cache every 3 full cycles
 cycle_count = 0
 
 def get_gst_for_lane(video_path, force_refresh=False):
-    """
-    Fetch GST and densities from the API.
     
-    Args:
-        video_path: Path to the video file
-        force_refresh: If True, force the API to reprocess the video
-    """
     try:
         response = requests.get(
             LANE_API_URL, 

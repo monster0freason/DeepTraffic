@@ -143,14 +143,21 @@ def process_entire_video(video_path, force_refresh=False):
     if not cap.isOpened():
         return None, "Failed to open video."
     
-    # Create a new tracker instance for each video
+    # # Create a new tracker instance for each video
+    # video_tracker = DeepSort(
+    #     max_age=30,
+    #     n_init=3,
+    #     max_iou_distance=0.7,
+    #     max_cosine_distance=0.2,
+    #     nn_budget=100
+    # )
     video_tracker = DeepSort(
-        max_age=30,
-        n_init=3,
-        max_iou_distance=0.7,
-        max_cosine_distance=0.2,
-        nn_budget=100
-    )
+    max_age=45,               # Keep track alive for ~1.5s
+    n_init=3,                 # Trust object quickly due to sparse frames
+    max_iou_distance=0.95,    # Allow more movement across skipped frames
+    max_cosine_distance=0.7,  # Let similar vehicles be matched
+    nn_budget=120             # Memory budget for appearance features
+)
     
     unique_counts = {cls: 0 for cls in vehicle_classes}
     track_ids = {cls: set() for cls in vehicle_classes}
@@ -296,6 +303,6 @@ def clear_cache():
     return jsonify({"status": "Cache cleared successfully"}), 200
 
 if __name__ == '__main__':
-    # app.run(debug=True)
+    app.run(debug=True)
 
-    process_entire_video("vid1.mp4")
+    # process_entire_video("vid1.mp4")

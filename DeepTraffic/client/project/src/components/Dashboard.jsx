@@ -128,10 +128,10 @@ const Dashboard = () => {
       </div>
       
       <div className="lanes-grid">
-        <LaneStats laneData={lanesData.lane1} videoPath="/vid2.mp4" />
-        <LaneStats laneData={lanesData.lane2} videoPath="/vid5.mp4" />
+        <LaneStats laneData={lanesData.lane1} videoPath="/vid5.mp4" />
+        <LaneStats laneData={lanesData.lane2} videoPath="/vid1.mp4" />
         <LaneStats laneData={lanesData.lane3} videoPath="/vid4.mp4" />
-        <LaneStats laneData={lanesData.lane4} videoPath="/vid1.mp4" />
+        <LaneStats laneData={lanesData.lane4} videoPath="/vid2.mp4" />
       </div>
     </div>
   );

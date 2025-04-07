@@ -1,0 +1,78 @@
+node_modules
+
+# Virtual environment
+venv/
+myenv/
+.myenv/
+.venv/
+
+# Byte-compiled / optimized files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Build and distribution
+build/
+dist/
+*.egg-info/
+*.egg
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# IDE-specific
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+*.sublime-workspace
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# Deep Learning/Model Files
+*.pt
+*.pth
+*.onnx
+*.weights
+*.h5
+*.tflite
+
+# Dataset/Logs
+data/
+*.csv
+*.json
+*.log
+logs/
+
+# Environment variables
+.env
+*.env
+secrets.ini
+config.py
+
+# OpenCV/Video Processing
+*.avi
+# *.mp4
+*.jpg
+*.png
+*.jpeg
+*.tmp
+
+# Ultralytics-specific
+runs/  # Training runs directory
+datasets/  # Local dataset cache
